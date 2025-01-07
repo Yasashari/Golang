@@ -1,69 +1,104 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
 func main() {
-	fmt.Println("Hello World!")
+	// 	name := "Code & String"
 
-	var myString string
-	fmt.Println(myString)
+	// 	runeName := []rune(name)
+	// 	fmt.Println(runeName)
 
-	myString = "Hello World!"
+	// 	byteName := []byte(name)
+	// 	fmt.Println(byteName)
 
-	var myInt int
+	// 	nameGrade := map[string]int{
+	// 		"foo":     10,
+	// 		"bar":     9,
+	// 		"foobard": 8,
+	// 		"x":       0,
+	// 	}
 
-	fmt.Println(myInt)
+	// 	gradeX, ok := nameGrade["x"]
+	// 	fmt.Println(gradeX, ok)
 
-	myInt = 42
+	// 	//Anonimous struct
 
-	fmt.Println(myInt)
+	// 	guardian := struct {
+	// 		firstName string
+	// 		LastName  string
+	// 	}{
+	// 		firstName: "Alex",
+	// 		LastName:  "Theron",
+	// 	}
 
-	var myBool bool
-	fmt.Println(myBool)
+	// 	fmt.Printf("%+v\n", guardian)
 
-	myBool = true
-	fmt.Println(myBool)
+	// 	age := 10
 
-	var myByte byte = 'A'
-	fmt.Println(myByte)
+	// 	if even := isEven(age); even {
+	// 		fmt.Println("Age is even")
+	// 	}
 
-	var myRune rune = 'B'
-	fmt.Println(myRune)
+	// 	//range for loop
 
-	var myComplex complex128
-	myComplex = 1 + 2i
-	fmt.Println(myComplex)
+	// 	a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
 
-	firstname := "John"
-	Lastname := "Doe"
-	fmt.Printf("%s %s\n", firstname, Lastname)
+	// 	for i, v := range a {
+	// 		fmt.Println(i, v)
+	// 	}
 
-	//Right shift Operation
-	var a uint8 = 20
-	fmt.Println(strconv.FormatUint(uint64(a), 2))
+	// 	ages := map[string]int{
+	// 		"Alex": 10,
+	// 		"John": 20,
+	// 	}
 
-	result := a >> 2 // Remove the last to bits -> 101 or 5
-	fmt.Println(strconv.FormatUint(uint64(result), 2))
-	fmt.Println(result)
+	// 	for name, age := range ages {
+	// 		fmt.Printf("%s is %d years old\n", name, age)
+	// 	}
 
-	//Left shift Operation
-	a = a << 2 // Append two zero bits -> 10100
-	fmt.Println(strconv.FormatUint(uint64(a), 2))
+	// outerLoop:
+	// 	for i := 0; i < 3; i++ {
+	// 		for j := 0; j < 3; j++ {
+	// 			if i == 1 && j == 1 {
+	// 				continue outerLoop
+	// 			}
+	// 			fmt.Println(i, j)
+	// 		}
 
-	//Set a bit given position
+	// 	}
 
-	a = 5 | (1 << 1) // 101 -> 111
-	fmt.Println(strconv.FormatUint(uint64(a), 2))
+	// 	//Goto statement
 
-	// Clear a bit given position
-	a = a &^ (1 << 1) // 111 -> 101
-	fmt.Println(strconv.FormatUint(uint64(a), 2))
+	// 	P := 9
 
-	// Toggle a bit given position
-	a = a ^ (1 << 0) // 101 -> 100
-	fmt.Println(strconv.FormatUint(uint64(a), 2))
+	// 	if P == 10 {
+	// 		goto end
+	// 	}
+
+	// 	fmt.Println(P)
+
+	// end:
+	// 	fmt.Println("End")
+
+	s := sum(1, 2, 3, 4, 5, 6, 10)
+	fmt.Println(s)
+
+	nums := []int{1, 2, 3, 4, 5, 6, 10}
+	ss := sum(nums...)
+	fmt.Println(ss)
 
 }
+
+func sum(nums ...int) int {
+	total := 0
+
+	for _, num := range nums {
+		total += num
+	}
+
+	return total
+}
+
+// func isEven(n int) bool {
+// 	return n&1 == 0
+// }
